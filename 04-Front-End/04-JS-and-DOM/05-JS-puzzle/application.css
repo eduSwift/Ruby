@@ -32,17 +32,3 @@ td {
 .empty {
   background: black;
 }
-
-button {
-  margin-top: 40px;
-}
-
-.hint {
-  margin-top: 16px;
-  opacity: 0;
-  transition: .3s opacity ease;
-}
-
-.hint.active {
-  opacity: 1;
-}

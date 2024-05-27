@@ -15,35 +15,27 @@ import runChallenges from "../spec/examiner.js";
 //       Make the function getEmail() return it
 const getEmail = () => {
   // TODO: return the email
-  const formInput = document.querySelector("#email").value;
-  return formInput;
 };
-
 
 // /!\ DO NOT CHANGE THIS LINE - TEST PURPOSES
 const borisesEmail = getEmail();
 
 // Ex 2. Change the content of the email input by writing your own email address
-const formInput = document.querySelector("#email");
-formInput.value = "edu@gmail.com";
+
 
 // Ex 3. Replace the email hint (next to the input) with 'This is my email now'
 //       The text should be emphasized using a <strong> tag
 
-document.querySelector("#email-hint").innerHTML = "<strong>This is my email now</strong>";
 
-// Ex 4. Add the .blue CSS class to the th elements
-const blue = document.querySelectorAll("th");
-blue.forEach((th) => {
-  th.classList.add("blue");
-});
+
+// Ex 4. Add the .blue CSS class to the tr element inside of the table header (<thead>)
+
 
 
 // Ex 5. Count the number of table body rows there are
 //       Make the function teamCount() return it
 const teamCount = () => {
   // TODO: return the number of teams
-  return document.querySelectorAll(".table tr").length - 1;
 };
 
 // /!\ DO NOT CHANGE THIS LINE - TEST PURPOSES
@@ -51,30 +43,28 @@ const teamCountBeforeAddition = teamCount();
 
 // Ex 6. Say there is a 15th team added to the table.
 //       Add a row at the bottom, this new team should have zero points.
-const body = document.querySelector("tbody");
-body.insertAdjacentHTML("beforeend", " <tr><td>14</td><td>Palmeiras</td><td>0</td></tr>");
 
 
-// Ex 7. Write some code to sum all points given to all teams
-//       Make the function summarizePoints() return it
-const summarizePoints = () => {
-  // TODO: return the sum
-  return Array.from(body.querySelectorAll("tbody tr")).map((row) => {
-    return parseInt(row.lastChild.innerText, 10);
-  }).reduce((x, y) => x + y);
+
+// Ex 7. Write some code to get the points for the first team
+//       (Rugby Club Toulonnais)
+const firstTeamPoints = () => {
+  // TODO: return the points
 };
 
+// /!\ DO NOT CHANGE THIS LINE - TEST PURPOSES
+const points = firstTeamPoints();
 
-// Ex 8. Change the background color of all `<th>` cells to #DDF4FF
-document.querySelectorAll("th").forEach((th) => {
-  th.style.background = "#DDF4FF";
-});
+
+// Ex 8. Change the background color of the tr element inside of the
+// table header (<thead>) to #DDF4FF
+
 
 
 // Ex 9. Remove the "Email:" label from the DOM
-document.querySelector("label").remove();
+
 
 
 
 // Checking exercise answers. DO NOT MODIFY THIS LINE
-runChallenges(borisesEmail, teamCountBeforeAddition, summarizePoints);
+runChallenges(borisesEmail, teamCountBeforeAddition, points);

@@ -1,17 +1,11 @@
+const apiUrl = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 
-// TODO: Display your age with an AJAX call instead of the console.log()
-
-const displayAge = (event) => {
+const displayDefinition = (event) => {
   event.preventDefault();
-  const firstName = document.getElementById("first-name").value;
-  console.log(firstName);
-  const agifyApiUrl = `https://api.agify.io/?name=${firstName}`;
-  fetch(agifyApiUrl)
-    .then(response => response.json())
-    .then((data) => {
-      console.log(data);
-      document.getElementById("your-age").innerText = `You're ${data.age} years old.`;
-    });
+  const word = document.getElementById("word").value;
+  // TODO: Display your word's definition with an AJAX call instead of the console.log()
+  console.log(word);
 };
-const form = document.getElementById("fetch-age");
-form.addEventListener("submit", displayAge);
+
+const form = document.getElementById("fetch-word");
+form.addEventListener("submit", displayDefinition);
